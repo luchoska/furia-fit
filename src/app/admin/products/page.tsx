@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
-import { Plus, Edit2, Trash2 } from "lucide-react";
+import { Plus, Edit2 } from "lucide-react";
+import { DeleteButton } from "./DeleteButton";
 
 export const dynamic = "force-dynamic";
 
@@ -63,13 +64,11 @@ export default async function AdminProductsPage() {
                                             {product.isAvailable ? "Disponible" : "Agotado"}
                                         </span>
                                     </td>
-                                    <td className="px-6 py-4 text-right space-x-3">
-                                        <button className="text-neutral-500 hover:text-white transition-colors">
+                                    <td className="px-6 py-4 text-right space-x-4">
+                                        <Link href={`/admin/products/${product.id}/edit`} className="inline-block text-neutral-500 hover:text-white transition-colors" title="Editar producto">
                                             <Edit2 size={18} />
-                                        </button>
-                                        <button className="text-neutral-500 hover:text-red-500 transition-colors">
-                                            <Trash2 size={18} />
-                                        </button>
+                                        </Link>
+                                        <DeleteButton id={product.id} />
                                     </td>
                                 </tr>
                             ))
