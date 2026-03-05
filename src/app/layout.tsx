@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 import { Providers } from "@/components/Providers";
 
 export const metadata: Metadata = {
-  title: "Furia Fit - Tienda Dropshipping",
-  description: "Ropa deportiva",
+  title: "Gsports - Botines y Zapatillas Deportivas",
+  description: "Los mejores botines, zapatillas y ropa deportiva en Paraná, Entre Ríos. Envíos locales. Pagá con MercadoPago.",
 };
 
 export default function RootLayout({

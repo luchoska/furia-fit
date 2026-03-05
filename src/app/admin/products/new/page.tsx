@@ -110,7 +110,7 @@ export default function NewProductPage() {
                                 type="text"
                                 name="name"
                                 required
-                                className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-md px-4 py-3 focus:ring-1 focus:ring-red-500 transition-all focus:outline-none"
+                                className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-md px-4 py-3 focus:ring-1 focus:ring-emerald-500 transition-all focus:outline-none"
                                 value={formData.name}
                                 onChange={handleChange}
                                 placeholder="Ej: Remera Pump Oversize"
@@ -125,7 +125,7 @@ export default function NewProductPage() {
                                     type="number"
                                     name="price"
                                     required
-                                    className="w-full pl-8 bg-neutral-950 border border-neutral-800 text-white rounded-md px-4 py-3 focus:ring-1 focus:ring-red-500 transition-all focus:outline-none"
+                                    className="w-full pl-8 bg-neutral-950 border border-neutral-800 text-white rounded-md px-4 py-3 focus:ring-1 focus:ring-emerald-500 transition-all focus:outline-none"
                                     value={formData.price}
                                     onChange={handleChange}
                                     placeholder="25000"
@@ -139,7 +139,7 @@ export default function NewProductPage() {
                                 type="text"
                                 name="sizes"
                                 required
-                                className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-md px-4 py-3 focus:ring-1 focus:ring-red-500 transition-all focus:outline-none"
+                                className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-md px-4 py-3 focus:ring-1 focus:ring-emerald-500 transition-all focus:outline-none"
                                 value={formData.sizes}
                                 onChange={handleChange}
                                 placeholder="S, M, L, XL"
@@ -150,7 +150,7 @@ export default function NewProductPage() {
                             <label className="block text-sm font-medium text-neutral-400 mb-1">Categoría</label>
                             <select
                                 name="category"
-                                className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-md px-4 py-3 focus:ring-1 focus:ring-red-500 transition-all focus:outline-none"
+                                className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-md px-4 py-3 focus:ring-1 focus:ring-emerald-500 transition-all focus:outline-none"
                                 value={formData.category}
                                 onChange={handleChange}
                             >
@@ -169,7 +169,7 @@ export default function NewProductPage() {
                                 name="description"
                                 required
                                 rows={3}
-                                className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-md px-4 py-3 focus:ring-1 focus:ring-red-500 transition-all focus:outline-none"
+                                className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-md px-4 py-3 focus:ring-1 focus:ring-emerald-500 transition-all focus:outline-none"
                                 value={formData.description}
                                 onChange={handleChange}
                                 placeholder="Detalle de tela, calce, y por qué está zarpada."
@@ -178,11 +178,11 @@ export default function NewProductPage() {
 
                         <div className="col-span-1 md:col-span-2">
                             <label className="block text-sm font-medium text-neutral-400 mb-1">Foto del Producto (Sube un archivo)</label>
-                            <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-neutral-800 border-dashed rounded-md hover:border-red-500/50 transition-colors w-full cursor-pointer relative bg-neutral-950">
+                            <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-neutral-800 border-dashed rounded-md hover:border-emerald-500/50 transition-colors w-full cursor-pointer relative bg-neutral-950">
                                 <div className="space-y-2 text-center">
                                     <Upload className="mx-auto h-12 w-12 text-neutral-500" />
                                     <div className="flex text-sm text-neutral-400">
-                                        <label className="relative cursor-pointer bg-transparent rounded-md font-medium text-red-500 hover:text-red-400 focus-within:outline-none">
+                                        <label className="relative cursor-pointer bg-transparent rounded-md font-medium text-emerald-400 hover:text-emerald-300 focus-within:outline-none">
                                             <span>{imageFile ? imageFile.name : "Subir archivo"}</span>
                                             <input name="file" type="file" className="sr-only" onChange={handleFileChange} accept="image/*" />
                                         </label>
@@ -197,7 +197,7 @@ export default function NewProductPage() {
                                 type="checkbox"
                                 name="isAvailable"
                                 id="isAvailable"
-                                className="w-5 h-5 accent-red-500 bg-neutral-900 border-neutral-700 rounded"
+                                className="w-5 h-5 accent-emerald-500 bg-neutral-900 border-neutral-700 rounded"
                                 checked={formData.isAvailable}
                                 onChange={handleChange}
                             />
@@ -211,7 +211,7 @@ export default function NewProductPage() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white px-8 py-3 font-bold rounded-md transition-all disabled:opacity-50"
+                            className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-3 font-bold rounded-md transition-all disabled:opacity-50"
                         >
                             {loading ? (
                                 <>

@@ -18,7 +18,7 @@ export default async function AdminProductsPage() {
                 </h1>
                 <Link
                     href="/admin/products/new"
-                    className="flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white px-4 py-2 font-bold rounded-md transition-colors"
+                    className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 font-bold rounded-md transition-colors"
                 >
                     <Plus size={20} />
                     Nuevo Producto
@@ -58,7 +58,7 @@ export default async function AdminProductsPage() {
                                     </td>
                                     <td className="px-6 py-4 font-medium text-white">{product.name}</td>
                                     <td className="px-6 py-4 text-neutral-400">{product.category}</td>
-                                    <td className="px-6 py-4 text-red-500 font-bold">${product.price.toLocaleString("es-AR")}</td>
+                                    <td className="px-6 py-4 text-emerald-400 font-bold">${product.price.toLocaleString("es-AR")}</td>
                                     <td className="px-6 py-4">
                                         <span className={`px-2 py-1 text-xs font-bold rounded-full ${product.isAvailable ? 'bg-green-500/10 text-green-500' : 'bg-red-500/10 text-red-500'}`}>
                                             {product.isAvailable ? "Disponible" : "Agotado"}
