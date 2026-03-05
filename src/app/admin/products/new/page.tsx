@@ -15,6 +15,7 @@ export default function NewProductPage() {
         imageUrl: "",
         isAvailable: true,
         sizes: "S, M, L",
+        category: "Zapatillas deportivas",
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -72,6 +73,7 @@ export default function NewProductPage() {
                     price: parseFloat(formData.price),
                     imageUrl: finalImageUrl,
                     sizes: JSON.stringify(sizesArray),
+                    category: formData.category,
                 }),
             });
 
@@ -142,6 +144,23 @@ export default function NewProductPage() {
                                 onChange={handleChange}
                                 placeholder="S, M, L, XL"
                             />
+                        </div>
+
+                        <div className="col-span-1 md:col-span-2">
+                            <label className="block text-sm font-medium text-neutral-400 mb-1">Categoría</label>
+                            <select
+                                name="category"
+                                className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-md px-4 py-3 focus:ring-1 focus:ring-red-500 transition-all focus:outline-none"
+                                value={formData.category}
+                                onChange={handleChange}
+                            >
+                                <option value="Zapatillas deportivas">Zapatillas deportivas</option>
+                                <option value="Botines de fútbol 11">Botines de fútbol 11</option>
+                                <option value="Botines fútbol 5">Botines fútbol 5</option>
+                                <option value="Botines infantiles">Botines infantiles</option>
+                                <option value="Ropa Deportiva">Ropa Deportiva</option>
+                                <option value="Accesorios">Accesorios</option>
+                            </select>
                         </div>
 
                         <div className="col-span-1 md:col-span-2">

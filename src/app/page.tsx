@@ -4,11 +4,21 @@ import { MessageCircle } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
-export default async function Home() {
+export default async function Home(props: any) {
+  const searchParams = await props.searchParams;
+  const categoryFilter = searchParams?.category || "Todas";
+
+  const whereClause: any = { isAvailable: true };
+  if (categoryFilter !== "Todas") {
+    whereClause.category = categoryFilter;
+  }
+
   const products = await prisma.product.findMany({
-    where: { isAvailable: true },
+    where: whereClause,
     orderBy: { createdAt: "desc" },
   });
+
+  const categories = ["Todas", "Botines de fútbol 11", "Botines fútbol 5", "Botines infantiles", "Zapatillas deportivas", "Ropa Deportiva", "Accesorios"];
 
   // Reemplazar con el número del cliente
   const whastAppNumber = "5493430000000";
@@ -53,9 +63,25 @@ export default async function Home() {
 
       {/* Catálogo */}
       <section id="cat" className="max-w-7xl mx-auto px-6 py-20 relative z-10">
-        <div className="flex items-center gap-4 mb-12">
+        <div className="flex items-center gap-4 mb-8">
           <h3 className="text-3xl md:text-4xl font-black uppercase tracking-wide">NUESTRO STOCK 🔥</h3>
           <div className="h-px flex-1 bg-gradient-to-r from-red-900 to-transparent" />
+        </div>
+
+        {/* Category Tabs */}
+        <div className="flex flex-wrap gap-3 mb-12 justify-center">
+          {categories.map((c) => (
+            <a
+              key={c}
+              href={c === "Todas" ? "/#cat" : `/?category=${encodeURIComponent(c)}#cat`}
+              className={`px-5 py-2 rounded-full font-bold text-sm tracking-wider uppercase transition-all duration-300 ${categoryFilter === c
+                  ? "bg-red-600 text-white shadow-[0_0_15px_rgba(220,38,38,0.5)]"
+                  : "bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-600 hover:bg-neutral-800"
+                }`}
+            >
+              {c}
+            </a>
+          ))}
         </div>
 
         {products.length === 0 ? (

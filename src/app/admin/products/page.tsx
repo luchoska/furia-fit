@@ -30,6 +30,7 @@ export default async function AdminProductsPage() {
                         <tr>
                             <th className="px-6 py-4">Foto</th>
                             <th className="px-6 py-4">Nombre</th>
+                            <th className="px-6 py-4">Categoría</th>
                             <th className="px-6 py-4">Precio</th>
                             <th className="px-6 py-4">Estado</th>
                             <th className="px-6 py-4 text-right">Acciones</th>
@@ -55,6 +56,7 @@ export default async function AdminProductsPage() {
                                         </div>
                                     </td>
                                     <td className="px-6 py-4 font-medium text-white">{product.name}</td>
+                                    <td className="px-6 py-4 text-neutral-400">{product.category}</td>
                                     <td className="px-6 py-4 text-red-500 font-bold">${product.price.toLocaleString("es-AR")}</td>
                                     <td className="px-6 py-4">
                                         <span className={`px-2 py-1 text-xs font-bold rounded-full ${product.isAvailable ? 'bg-green-500/10 text-green-500' : 'bg-red-500/10 text-red-500'}`}>

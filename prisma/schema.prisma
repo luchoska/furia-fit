@@ -27,6 +27,7 @@ model Product {
   imageUrl    String?
   isAvailable Boolean  @default(true)
   sizes       String   // Guardaremos JSON stringificado ["S", "M", "L"]
+  category    String   @default("Otro") // Ej: Botines fútbol 5
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }

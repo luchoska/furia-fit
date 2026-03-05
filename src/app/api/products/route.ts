@@ -20,6 +20,7 @@ export async function POST(req: Request) {
                 imageUrl: data.imageUrl,
                 isAvailable: data.isAvailable,
                 sizes: data.sizes,
+                category: data.category || "Otro",
             }
         });
 
