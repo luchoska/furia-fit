@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import cloudinary from "@/lib/cloudinary";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 export async function POST(req: Request) {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     if (!session) {
         return NextResponse.json({ error: "No autorizado" }, { status: 401 });
     }

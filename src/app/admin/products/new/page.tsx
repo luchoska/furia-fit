@@ -47,9 +47,16 @@ export default function NewProductPage() {
                     body: fileForm,
                 });
 
+                if (!uploadRes.ok) {
+                    const errorText = await uploadRes.text();
+                    throw new Error(`Error subiendo imagen: ${uploadRes.status} ${errorText}`);
+                }
+
                 const uploadData = await uploadRes.json();
                 if (uploadData.url) {
                     finalImageUrl = uploadData.url;
+                } else {
+                    throw new Error("No se obtuvo URL de la imagen de Cloudinary");
                 }
             }
 
@@ -72,11 +79,12 @@ export default function NewProductPage() {
                 router.push("/admin/products");
                 router.refresh();
             } else {
-                alert("Error al crear producto");
+                const errorData = await res.text();
+                throw new Error(`Error API Producto: ${res.status} ${errorData}`);
             }
-        } catch (error) {
+        } catch (error: any) {
             console.error(error);
-            alert("Error inesperado al crear");
+            alert(`Error inesperado: ${error.message}`);
         } finally {
             setLoading(false);
         }
