@@ -56,7 +56,7 @@ export default async function Home(props: any) {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-green-400 italic">un Profesional</span>
           </h2>
           <p className="text-lg md:text-xl text-neutral-400 mb-10 max-w-2xl mx-auto font-medium">
-            Los mejores botines, zapatillas y ropa deportiva al mejor precio. Entrá a la cancha con todo. Pagá con MercadoPago.
+            Los mejores botines, zapatillas y ropa deportiva al mejor precio. Entrá a la cancha con todo.
           </p>
           <a href="#cat" className="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 text-white font-black uppercase tracking-widest px-8 py-4 rounded transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(16,185,129,0.4)]">
             ⚽ VER EQUIPAMIENTO
@@ -166,7 +166,6 @@ export default async function Home(props: any) {
       {/* Footer */}
       <footer className="border-t border-neutral-900 bg-neutral-950 py-12 text-center text-neutral-600 text-xs tracking-widest uppercase">
         <p className="mb-4">© 2026 GSPORTS - PARANÁ, ENTRE RÍOS. ⚽</p>
-        <p>Potenciado con MercadoPago.</p>
       </footer>
     </div>
   );
