@@ -2,6 +2,8 @@ import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import { Plus, Edit2, Trash2 } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminProductsPage() {
     const products = await prisma.product.findMany({
         orderBy: { createdAt: "desc" }

@@ -2,6 +2,8 @@ import { prisma } from "@/lib/prisma";
 import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const products = await prisma.product.findMany({
     where: { isAvailable: true },
